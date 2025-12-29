@@ -1,6 +1,7 @@
 
 let container = document.querySelector(".container")
-let btn = document.querySelector("button")
+let btn = document.querySelector('.btn')
+let deltebutton = document.querySelector('.delbutton')
 let num = 0
 
 
@@ -27,6 +28,10 @@ btn.addEventListener('click', () => {
     })
 }
 
+deltebutton.addEventListener('click', () => {
+    resetgrid()
+})
+
 container.addEventListener('mouseover', (e) => {
     e.target.addEventListener('mouseenter', () => {
         e.target.style.backgroundColor = 'blue'
@@ -39,4 +44,11 @@ function deletegrid() {
     let row = document.querySelector('.row')
     container.removeChild(row)
     }   
+}
+
+function resetgrid() {
+    const boxes = document.querySelectorAll('.square')
+    boxes.forEach(box => {
+        box.style.backgroundColor = 'white'
+    })
 }
